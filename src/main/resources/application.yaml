@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    username: members-log-in
+    password: members-log-in
+    url: jdbc:mysql://localhost:3306/ebay_client
+    
+
+
+logging:
+  level:
+    root:  warn
+    '[com.promineotech]': debug

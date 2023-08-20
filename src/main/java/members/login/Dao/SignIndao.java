@@ -1,16 +1,23 @@
 package members.login.Dao;
 
-public interface SignIndao {
+import java.util.List;
+
+import members.login.entity.SignIn;
+
+public interface SignInDao {
 	
 	
 	List<SignIn> fetchAllSignIn();
 	
 	
-	SignIn createsignIn(int date, int studentNumber, String studentName, String descripton);
+	SignIn createSignIn(int date, int studentNumber, String studentName, String descripton);
  
 	
 	SignIn updateSignIn(int date, int studentNumber, String studentName, String descripton);
 	
 	void deleteSignIn(int signInID);
+
+
+
 	
 }

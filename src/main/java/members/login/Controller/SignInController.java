@@ -20,6 +20,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.servers.Server;
+import members.login.entity.SignIn;
 
 
 
@@ -60,7 +61,7 @@ public interface SignInController {
 	//@GetMapping("inventory_id") = to get by inventory id
 	
 	@ResponseStatus(code = HttpStatus.OK)
-	List<signIn> fetchAllMembers(
+	List<SignIn> fetchAllSignIn(
 			
 			);
 	
@@ -80,7 +81,7 @@ public interface SignInController {
 							description = "A new sign in sheet has been added to the data for today",
 							content = @Content(
 									mediaType = "application/json",
-									schema = @Schema(implementation =signIn.class))),
+									schema = @Schema(implementation =SignIn.class))),
 					@ApiResponse(
 							responseCode = "400",
 							description = "The request parameters are invalid",
@@ -100,7 +101,7 @@ public interface SignInController {
 	@PostMapping("/create sign-in member")
 	@ResponseStatus(code = HttpStatus.CREATED)	
 	
-	signIn createMembers(int date, int studentNumber, String studentName, String description);	
+	SignIn createSignIn(int date, int studentNumber, String studentName, String description);	
 	
 //////////////////////// 
 	// update //
@@ -114,7 +115,7 @@ public interface SignInController {
 							description = "Returns updated existing members",
 							content = @Content(
 									mediaType = "application/json",
-									schema = @Schema(implementation = signIn.class))),
+									schema = @Schema(implementation = SignIn.class))),
 					@ApiResponse(
 							responseCode = "400",
 							description = "The request parameters are invalid",
@@ -143,7 +144,7 @@ public interface SignInController {
     @PutMapping("/updateinventory")
 
     @ResponseStatus(code = HttpStatus.OK)
-    signIn updateSignIn(int date, int studentNumber, String studentName, String description);	
+    SignIn updateSignIn(int date, int studentNumber, String studentName, String description);	
 	
 	@Operation(
 				summary = "Deletes an existing student report",
@@ -154,7 +155,7 @@ public interface SignInController {
 				description = "memebr in records was deleted",
 				content = @Content(
 				mediaType = "application/json",
-				schema = @Schema(implementation = signIn.class))),
+				schema = @Schema(implementation = SignIn.class))),
 	@ApiResponse(
 				responseCode = "400",
 				description = "The request parameters are invalid",
@@ -181,7 +182,7 @@ public interface SignInController {
 @DeleteMapping("/deletemembers")
 @ResponseStatus(code = HttpStatus.OK)
 
-	void deleteMembers(int signInId;
+	void deleteSignIn(int signInId);
 
 
 
@@ -189,8 +190,6 @@ public interface SignInController {
 		
 }
 
-	
-	
 
 	
 	

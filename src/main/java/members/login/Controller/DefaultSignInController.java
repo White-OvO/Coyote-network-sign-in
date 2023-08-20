@@ -1,5 +1,9 @@
 package members.login.Controller;
 
+import java.util.List;
+
+import members.login.entity.SignIn;
+import service.SignInService;
 
 @RestController
 @Sl4j
@@ -12,20 +16,20 @@ public class DefaultSignInController implements SignInController{
 	
 	@Override
 	
-	public List<SignIn> fetchAllSignIns() {
+	public List<SignIn> fetchAllSignIn() {
 			return signInService.fetchAllSignIn();
 	}
 	
 	
 	@Override
-	public SignIn createSignIn(int date, int studentNumber, String studentName, String descripton);
-		return signInService.createSignIn(int date, int studentNumber, String studentName, String descripton);
+	public SignIn createSignIn(int date, int studentNumber, String studentName, String description);
+		return signInService.createSignIn(int date, int studentNumber, String studentName, String description);
 		
 		
 		
 } 
 @Override
-public SignIn updateInventory(int date, int studentNumber, String studentName, String descripton);
+public SignIn updateSignIn(int date, int studentNumber, String studentName, String descripton);
 	return signInService.updateSignIn(int date, int studentNumber, String studentName, String descripton);
 	
 	
@@ -33,8 +37,8 @@ public SignIn updateInventory(int date, int studentNumber, String studentName, S
 	
 }
 @Override
-public void deleteSignIn(int studentNumber) { 
-		log.debug("studentNumber={}", studentNumber);
+public void deleteSignIn(int signInId) { 
+		log.debug("signInId={}", signInId);
 		signInService.deleteSignIn(signInId);
 		
 }

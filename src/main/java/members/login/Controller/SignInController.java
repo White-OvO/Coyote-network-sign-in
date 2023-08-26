@@ -25,14 +25,14 @@ import members.login.entity.SignIn;
 
 
 @Validated
-@RequestMapping("Members")
-@OpenAPIDefinition(info = @Info(title = " Sign in sheet""), servers = {
+@RequestMapping("signIn")
+@OpenAPIDefinition(info = @Info(title = "network club members"), servers = {
 		@Server(url = "http://localhost:8080", description = "Local server.")})
 
 public interface SignInController {
 
 	@Operation(
-			summary = "Returns the list table for todays sign in log,
+			summary = "Returns the list table for todays sign in log",
 			description = "Check todays sign in ",
 			responses = {
 				@ApiResponse(
@@ -40,7 +40,7 @@ public interface SignInController {
 					description = "The created memory for log in is returned",
 					content = @Content (
 							mediaType = "application/json",
-							schema = @Schema(implementation = signIn.class))),
+							schema = @Schema(implementation = SignIn.class))),
 				@ApiResponse(
 						responseCode = "400",
 						description = "A sign in data entry component was not found with the input criteria",
@@ -144,7 +144,8 @@ public interface SignInController {
     @PutMapping("/updateinventory")
 
     @ResponseStatus(code = HttpStatus.OK)
-    SignIn updateSignIn(int date, int studentNumber, String studentName, String description);	
+
+	SignIn updateSignIn(int signInId, SignIn updatedSignIn);
 	
 	@Operation(
 				summary = "Deletes an existing student report",
@@ -185,6 +186,9 @@ public interface SignInController {
 	void deleteSignIn(int signInId);
 
 
+
+
+	
 
 
 		

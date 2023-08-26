@@ -2,6 +2,10 @@ package service;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import lombok.extern.slf4j.Slf4j;
 import members.login.Dao.SignInDao;
 import members.login.entity.SignIn;
@@ -18,7 +22,7 @@ public class DefaultSignInService implements SignInService{
 	@Autowired
 	private SignInDao signInDao;
 	
-	@Transactional(readOnly = true)
+	//@Transactional(readOnly = true)
 	@Override
 	public List<SignIn> fetchAllSignIn() { 
 		List<SignIn> signIn = signInDao.fetchAllSignIn();
@@ -28,6 +32,8 @@ public class DefaultSignInService implements SignInService{
 		}
 		return signIn;
 	}
+	
+	@Override
 	public SignIn createSignIn(int date, int studentNumber, String studentName, String description) {
 		log.info("Creates members in Service");
 		return signInDao.createSignIn(date,studentNumber,studentName,description);
@@ -35,9 +41,9 @@ public class DefaultSignInService implements SignInService{
 	}
 
 	@Override
-	public SignIn updateSignIn(int signInId,int date, int studentNumber, String studentName, String description) {
+	public SignIn updateSignIn(int signInId, SignIn updatedSignIn) {
 		log.info("update signed in exisiting members in the service ");
-		return SignInDao.updateSignIn(signInId,date, studentNumber,studentName, description);
+		return signInDao.updateSignIn(signInId,updatedSignIn);
 	}
 
 	@Override

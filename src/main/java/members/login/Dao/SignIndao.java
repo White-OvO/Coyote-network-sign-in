@@ -13,9 +13,15 @@ public interface SignInDao {
 	SignIn createSignIn(int date, int studentNumber, String studentName, String descripton);
  
 	
-	SignIn updateSignIn(int date, int studentNumber, String studentName, String descripton);
+	SignIn updateSignIn(int signInId, SignIn updatedSignIn);
 	
-	void deleteSignIn(int signInID);
+	void deleteSignIn(int signInId);
+
+
+
+
+
+
 
 
 

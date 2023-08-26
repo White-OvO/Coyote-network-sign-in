@@ -1,4 +1,7 @@
 package members.login.entity;
+
+
+
 import lombok.Builder;
 import lombok.Data;
 
@@ -11,16 +14,16 @@ import lombok.Data;
 @Builder
 public class SignIn {
 
-	public static void main(String[] args) {
-private int date;
-private int studentNumber;
-private String studentName;
-private String description;
+
+			int date;
+			int studentNumber;
+			String studentName;
+			String description;
 
 
 	}
 
-}
+
 
 
 /* Current date and time output

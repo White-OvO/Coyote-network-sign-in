@@ -2,17 +2,23 @@ package members.login.Controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+///import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RestController;
+
+import lombok.extern.slf4j.Slf4j;
+//import members.login.Dao.DefaultSignInDao;
 import members.login.entity.SignIn;
 import service.SignInService;
 
 @RestController
-@Sl4j
+@Slf4j
 
 public class DefaultSignInController implements SignInController{
 
 	@Autowired
 	
-	private SignInService sinInService;
+	private SignInService signInService;
 	
 	@Override
 	
@@ -22,15 +28,15 @@ public class DefaultSignInController implements SignInController{
 	
 	
 	@Override
-	public SignIn createSignIn(int date, int studentNumber, String studentName, String description);
-		return signInService.createSignIn(int date, int studentNumber, String studentName, String description);
+	public SignIn createSignIn(int date, int studentNumber, String studentName, String description) {
+		return signInService.createSignIn(date, studentNumber, studentName, description);
 		
 		
 		
 } 
 @Override
-public SignIn updateSignIn(int date, int studentNumber, String studentName, String descripton);
-	return signInService.updateSignIn(int date, int studentNumber, String studentName, String descripton);
+public SignIn updateSignIn(int signInId,SignIn updatedSignIn) {
+	return signInService.updateSignIn(signInId, updatedSignIn);
 	
 	
 	

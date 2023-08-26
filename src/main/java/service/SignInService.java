@@ -17,8 +17,10 @@ public interface SignInService {
 			String StudentName, String description);
 
 	
-	SignIn updateSignIn(int signInId, int date, int studentNumber, String studentName,
-			String description);
+//	SignIn updateSignIn(int signInId, int date, int studentNumber, String studentName,
+//			String description);
+
+	SignIn updateSignIn(int signInId, SignIn updatedSignIn);
 
 	
 }

@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.10</version>
+		<version>2.7.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
@@ -35,8 +35,7 @@
       <optional>true</optional>
     </dependency>
   
-  
-     <!-- Bean validation ===============================-->
+
     <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-validation</artifactId>
@@ -58,15 +57,6 @@
 			<artifactId>spring-boot-starter-data-jdbc</artifactId>
 </dependency>
 
-<!-- step 6 : Add the database dependencies described in the video 
- 	to the POM file (MySQL driver and Spring Boot Starter JDBC). To find them,
-	nagivate to https://mvnrepository.com/. Search for mysql-connector-j and spring-boot-starter-jdbc. 
-	In the POM file you don't need version numbers for either dependency because the version is included in the Spring Boot Starter Parent.
-==============================-->
-   
-<!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
-
-<!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
 
 
 <dependency>
@@ -80,7 +70,7 @@
 <dependency>
     <groupId>com.h2database</groupId>
     <artifactId>h2</artifactId>
-    <scope>provided</scope>
+    <scope>test</scope>
 </dependency>
 
 

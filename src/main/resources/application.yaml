@@ -3,10 +3,11 @@ spring:
     username: members_log_in
     password: members_log_in
     url: jdbc:mysql://localhost:3306/members_log_in
-    
+  profiles:
+    active: local  
 
 
 logging:
   level:
     root:  warn
-    '[edu.csn]': debug
+    '[com.example]': debug
